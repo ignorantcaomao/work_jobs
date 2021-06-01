@@ -16,20 +16,20 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b9f6ec0-4909-4d6b-a7b8-ae8bc83011e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/work_job.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/work_job.iml" afterDir="false" />
+    <list default="true" id="0b9f6ec0-4909-4d6b-a7b8-ae8bc83011e8" name="Default Changelist" comment="完成任务的取数">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobs/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobs/youtrack.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/youtrack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.log.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.log.2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.log.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.log.4" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,8 +191,16 @@
       <option name="presentableId" value="Default" />
       <updated>1622532317548</updated>
       <workItem from="1622532323313" duration="9853000" />
-      <workItem from="1622556482641" duration="4997000" />
+      <workItem from="1622556482641" duration="7218000" />
     </task>
+    <task id="LOCAL-00001" summary="完成任务的取数">
+      <created>1622562060954</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622562060954</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,11 +211,27 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="完成任务的取数" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成任务的取数" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622556715303">
@@ -227,31 +251,35 @@
     </state>
     <state x="458" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1622544600290" />
     <state x="644" y="150" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622556689955" />
-    <state width="914" height="282" key="GridCell.Tab.0.bottom" timestamp="1622561930328">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1622564165095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="162" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1622544515097" />
-    <state width="914" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622561930328" />
-    <state width="914" height="282" key="GridCell.Tab.0.center" timestamp="1622561930328">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622564165095" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1622564165095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="162" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1622544515097" />
-    <state width="914" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622561930328" />
-    <state width="914" height="282" key="GridCell.Tab.0.left" timestamp="1622561930328">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622564165095" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1622564165095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="162" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1622544515096" />
-    <state width="914" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622561930328" />
-    <state width="914" height="282" key="GridCell.Tab.0.right" timestamp="1622561930328">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622564165095" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1622564165095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="162" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1622544515097" />
-    <state width="914" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622561930328" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622564165095" />
     <state x="259" y="9" key="SettingsEditor" timestamp="1622556639351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1622532915981" />
     <state x="259" y="9" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1622556639351" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1622562154883">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1622562154883" />
     <state x="345" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1622532395841">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -266,6 +294,6 @@
     <SUITE FILE_PATH="coverage/work_job$youtrack.coverage" NAME="youtrack Coverage Results" MODIFIED="1622544515079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jobs" />
     <SUITE FILE_PATH="coverage/work_jobs$work_job.coverage" NAME="work_job Coverage Results" MODIFIED="1622556717325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/work_job$getConfig.coverage" NAME="getConfig Coverage Results" MODIFIED="1622533495536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jobs" />
-    <SUITE FILE_PATH="coverage/work_jobs$youtrack.coverage" NAME="youtrack Coverage Results" MODIFIED="1622561930313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jobs" />
+    <SUITE FILE_PATH="coverage/work_jobs$youtrack.coverage" NAME="youtrack Coverage Results" MODIFIED="1622564165079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jobs" />
   </component>
 </project>
