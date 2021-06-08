@@ -21,7 +21,7 @@ console_handler = logging.StreamHandler()
 # 输出日志到文件中
 file_handler = logging.handlers.RotatingFileHandler(
               filename=os.path.dirname(__file__) + '/log.log',
-              maxBytes=10240,
+              maxBytes=10485760,
               backupCount=5)
 # file_handler = logging.FileHandler(filename=os.path.dirname(__file__) + '/log.log', mode='a', encoding='UTF-8')
 # 添加handler到日志器里
