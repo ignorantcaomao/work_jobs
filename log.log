@@ -1,1 +1,4 @@
 2021-06-08 17:49:52,368 - youtrack.py: get_workItems - ERROR - 'str' object has no attribute 'get'
+2021-06-09 10:00:02,273 - youtrack.py: async_issue_by_project - INFO - 收到数据条数：2
+2021-06-09 10:06:05,179 - youtrack.py: async_issue_by_project - INFO - 收到数据条数：2
+2021-06-09 10:07:03,164 - youtrack.py: async_issue_by_project - INFO - 收到数据条数：2
