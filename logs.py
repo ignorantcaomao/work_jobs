@@ -9,6 +9,8 @@ import os
 import logging
 import logging.handlers
 
+print(os.path.curdir)
+
 # 创建日志对象
 logger = logging.getLogger(__name__)
 

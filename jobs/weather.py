@@ -50,6 +50,7 @@ def main():
     for t in threads:
         t.start()
 
+
     work_queue.join()
 
     while threads:

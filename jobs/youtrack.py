@@ -6,13 +6,14 @@
 # @Software: PyCharm
 import asyncio
 from queue import Queue, Empty
-from threading import Thread
+import threading
 import aiohttp
 import json
 import requests
 import time
 from jobs.getConfig import conf
 from logs import logger
+import collections
 
 base_url = conf.get('request', 'url')
 num = int(conf.get('request', 'num'))
@@ -23,24 +24,51 @@ headers = {
     'Cookie': conf.get('request', 'Cookie')
 }
 THREAD_POOL_SIZE = 5
+collections.deque()
 
 
-def get_data(url):
+class WorkThread(threading.Thread):
+    def __init__(self, func, args, name):
+        super(WorkThread, self).__init__()
+        self.func = func
+        self.args = args
+        self.name = name
+        self.result = None
+
+    def run(self):
+        self.result = self.func(self.args)
+
+    def get_result(self):
+        try:
+            return self.result
+        except Exception:
+            return None
+
+
+def get_data(url, datas):
     with requests.get(url=url, headers=headers, timeout=timeout) as resp:
         data = json.loads(resp.text)
-        print(len(data))
-        return data
+        datas.append(data)
+        logger.info('收到的条数:{}'.format(len(data)))
+        return datas
+
+
 
 
 def worker(work_queue):
+    result = []
     while not work_queue.empty():
         try:
             item = work_queue.get(block=False)
         except Empty:
             break
-        print(item)
-        get_data(item)
-        work_queue.task_done()
+        else:
+            per_data = get_data(item)
+            result += per_data
+            work_queue.task_done()
+            logger.info('result:{}'.format(len(result)))
+    print(len(result))
+    return result
 
 
 class Yourtrack():
@@ -64,46 +92,22 @@ class Yourtrack():
         default_num = 1000
 
         worker_queue = Queue()
-        url_format = base_url + '/api/workItems?$skip={}$top={}&fields=created,duration(presentation,minutes),author(name),creator(name),date,id,text,type,updated'
+
+        url_format = base_url + '/api/workItems?&fields=created,duration(presentation,minutes),author(name),creator(name),date,id,text,type,updated$skip={}$top={}'
 
         for i in range(default_page):
             url = url_format.format(i * default_num, default_num)
             worker_queue.put(url)
 
-        threads = [Thread(target=worker, args=(worker_queue, )) for _ in range(THREAD_POOL_SIZE)]
+        threads = [threading.Thread(target=worker, args=(worker_queue,)) for _ in range(THREAD_POOL_SIZE)]
 
         for t in threads:
             t.start()
 
         worker_queue.join()
 
-        while worker_queue:
-            worker_queue.pop().join()
-
-
-        # try:
-        #     url = base_url + '/api/workItems?$skip=0$top=500&fields=created,duration(presentation,minutes),author(name),creator(name),date,id,text,type,updated'
-        #     print(url)
-        #     body = requests.get(url=url, headers=self.__headers, timeout=int(self.timeout))
-        #     data = json.loads(body.text)
-        #     print(len(data))
-        #     print(data)
-        #     # result = []
-        #     # for item in data:
-        #     #     temp = {}
-        #     #     temp['created'] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(item.get('created') // 1000))
-        #     #     temp['author'] = item.get('author').get('name')
-        #     #     temp['creator'] = item.get('creator').get('name')
-        #     #     temp['date'] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(item.get('date') // 1000))
-        #     #     temp['id'] = item.get('id')
-        #     #     temp['text'] = item.get('text')
-        #     #     temp['type'] = item.get('type')
-        #     #     temp['updated'] = item.get('updated')
-        #     #     result.append(temp)
-        #     # # result = sorted(data, key=lambda x: x['id'], reverse=True)
-        #     # logger.info(result)
-        # except Exception as e:
-        #     logger.error(e)
+        while threads:
+            threads.pop().join()
 
     def get_issue_by_project(self):
         try:
